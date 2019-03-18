@@ -73,7 +73,8 @@ if __name__ == "__main__":
     for alpha in alphas:
         mixed_imgs.append(mix_images(image_1, image_2, alpha).convert('L'))
 
-    # mixed_img.show()
+    mixed_imgs[0].show()
+    mixed_imgs[1].show()
     width, height = mixed_imgs[0].size
     n = len(mixed_imgs)
 
