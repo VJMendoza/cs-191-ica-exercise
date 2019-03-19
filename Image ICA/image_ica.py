@@ -6,8 +6,9 @@ import numpy as np
 import operator
 import os
 
-image_folder = 'images'
-output_folder = 'images/res'
+script_dir = os.path.dirname(__file__)
+image_folder = os.path.join(script_dir, 'images')
+output_folder = os.path.join(script_dir, 'images/res')
 melo_pics = ['meloetta-aria.jpg', 'meloetta-pirouette.jpg']
 
 shift = (30, 0)
@@ -38,7 +39,6 @@ def fastica(mixed_img, width, height, n):
         img = np.array(img)
         flat_imgs.append(img.flatten())
         
-    # test = list(zip(flat_imgs[0], flat_imgs[1]))
     test = list(zip(*flat_imgs))
 
     fast_ica  = FastICA(n_components=n)
@@ -67,8 +67,6 @@ if __name__ == "__main__":
     image_2 = Image.open(os.path.join(image_folder, melo_pics[1]))
 
     mixed_imgs = []
-    # mixed_imgs.append(mix_images(image_1, image_2, 0.25).convert('L'))
-    # mixed_imgs.append(mix_images(image_1, image_2, 0.75).convert('L'))
 
     for alpha in alphas:
         mixed_imgs.append(mix_images(image_1, image_2, alpha).convert('L'))
