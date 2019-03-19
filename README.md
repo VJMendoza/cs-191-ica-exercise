@@ -9,6 +9,5 @@ To run the script,
 2. Install the requirements using `pip install -r requirements.txt`.
 3. Run `python image_ica.py`.
 
-The resulting separated images are saved in `[images\res]`(Image ICA/images/res)
-
+The resulting separated images are saved in `images\res`
 ## Audio ICA
